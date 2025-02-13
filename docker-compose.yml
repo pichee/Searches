@@ -1,0 +1,13 @@
+#Rodar banco de dados via docker,não precisa instalar,mesma versão do banco
+version: '3.8'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: teste
+    environment:
+      POSTGRES_DB: teste
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5431:5432"
+    restart: always
