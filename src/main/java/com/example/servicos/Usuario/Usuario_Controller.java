@@ -5,6 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("usuario")
 
@@ -12,10 +14,6 @@ public class  Usuario_Controller {
     @Autowired
     private Metodos_User metodosUser;
 
-    @GetMapping("/teste")
-    public String teste() {
-        return "teste";
-    }
 
     @PostMapping("/add")
         //ResponseEntity=representar a resposta HTTP
@@ -24,4 +22,11 @@ public class  Usuario_Controller {
             return  ResponseEntity.status(HttpStatus.CREATED)
                     .body("deu certo :D");
         }
+
+    @GetMapping("/vizualizar")
+    public ResponseEntity<String> vizualizar(){
+        List<Usuario_Model> vizu=metodosUser.ListarUsuario();
+        return ResponseEntity.ok("Lista de usuarios:\n"+vizu);
+    }
+
     }
