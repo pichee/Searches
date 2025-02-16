@@ -8,7 +8,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor //faz um construtor com todos
 @AllArgsConstructor //faz um contrutor com nenhum
 
-public class Usuario_model {
+public class Usuario_Model {
+     private long id;
      private String nome;
      private String senha;
      private String email;

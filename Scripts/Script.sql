@@ -1,0 +1,1 @@
+select * from Tabela_Banco;
